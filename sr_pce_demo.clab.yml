@@ -1,0 +1,54 @@
+name: sr-pce-demo
+
+topology:
+  nodes:
+    srl1:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux
+      startup-config: srl1.conf
+    srl2:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux
+      startup-config: srl2.conf
+    srl3:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux
+      startup-config: srl3.conf
+    srl4:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux
+      startup-config: srl4.conf
+    srl5:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux
+      startup-config: srl5.conf
+    srl6:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux
+      startup-config: srl6.conf
+    pce:
+      kind: linux
+      image: frrouting/frr:v7.5.1
+      binds:
+        - pce_daemons:/etc/frr/daemons
+        - pce.conf:/etc/frr/frr.conf
+    terminal-east:
+      kind: linux
+      image: alpine:latest
+      cmd: sleep 3600
+    terminal-west:
+      kind: linux
+      image: alpine:latest
+      cmd: sleep 3600
+
+  links:
+    - endpoints: ["srl1:e1-1", "srl2:e1-1"]
+    - endpoints: ["srl2:e1-2", "srl3:e1-1"]
+    - endpoints: ["srl3:e1-2", "srl4:e1-1"]
+    - endpoints: ["srl4:e1-2", "srl5:e1-1"]
+    - endpoints: ["srl5:e1-2", "srl6:e1-1"]
+    - endpoints: ["srl1:e1-3", "srl6:e1-2"]
+    - endpoints: ["srl1:e1-4", "pce:eth1"]
+    - endpoints: ["srl6:e1-3", "pce:eth2"]
+    - endpoints: ["terminal-east:eth1", "srl1:e1-5"]
+    - endpoints: ["terminal-west:eth1", "srl6:e1-4"]
