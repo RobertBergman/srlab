@@ -5,27 +5,27 @@ topology:
     srl1:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
-      startup-config: srl1.conf
+      startup-config: srl1.cfg
     srl2:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
-      startup-config: srl2.conf
+      startup-config: srl2.cfg
     srl3:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
-      startup-config: srl3.conf
+      startup-config: srl3.cfg
     srl4:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
-      startup-config: srl4.conf
+      startup-config: srl4.cfg
     srl5:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
-      startup-config: srl5.conf
+      startup-config: srl5.cfg
     srl6:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
-      startup-config: srl6.conf
+      startup-config: srl6.cfg
     pce:
       kind: linux
       image: frrouting/frr:v7.5.1
