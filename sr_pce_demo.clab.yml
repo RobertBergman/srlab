@@ -7,37 +7,37 @@ topology:
       image: ghcr.io/nokia/srlinux
       startup-config: srl1.cfg
       binds:
-        - ~/.ssh/id_rsa:/root/.ssh/id_rsa
+        - slr1:/root/.ssh
     srl2:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
       startup-config: srl2.cfg
       binds:
-        - ~/.ssh/id_rsa:/root/.ssh/id_rsa
+        - slr2:/root/.ssh
     srl3:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
       startup-config: srl3.cfg
       binds:
-        - ~/.ssh/id_rsa:/root/.ssh/id_rsa
+        - slr3:/root/.ssh
     srl4:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
       startup-config: srl4.cfg
       binds:
-        - ~/.ssh/id_rsa:/root/.ssh/id_rsa
+        - slr1:/root/.ssh4
     srl5:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
       startup-config: srl5.cfg
       binds:
-        - ~/.ssh/id_rsa:/root/.ssh/id_rsa
+        - slr5:/root/.ssh
     srl6:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
       startup-config: srl6.cfg
       binds:
-        - ~/.ssh/id_rsa:/root/.ssh/id_rsa
+        - slr6:/root/.ssh
     pce:
       kind: linux
       image: frrouting/frr:v7.5.1
