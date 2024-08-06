@@ -6,26 +6,44 @@ topology:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
       startup-config: srl1.cfg
+      ssh:
+        authorized_keys:
+          - /home/ubuntu/.ssh/authorized_keys
     srl2:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
       startup-config: srl2.cfg
+      ssh:
+        authorized_keys:
+          - /home/ubuntu/.ssh/authorized_keys
     srl3:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
       startup-config: srl3.cfg
+      ssh:
+        authorized_keys:
+          - /home/ubuntu/.ssh/authorized_keys
     srl4:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
       startup-config: srl4.cfg
+      ssh:
+        authorized_keys:
+          - /home/ubuntu/.ssh/authorized_keys
     srl5:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
       startup-config: srl5.cfg
+      ssh:
+        authorized_keys:
+          - /home/ubuntu/.ssh/authorized_keys
     srl6:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux
       startup-config: srl6.cfg
+      ssh:
+        authorized_keys:
+          - /home/ubuntu/.ssh/authorized_keys
     pce:
       kind: linux
       image: frrouting/frr:v7.5.1
